@@ -1,5 +1,8 @@
 from django.views.generic import TemplateView
 
+class MainView(TemplateView):
+    template_name = 'main.html'
+
 class HulkView(TemplateView):
     template_name = 'hulk.html'
 
