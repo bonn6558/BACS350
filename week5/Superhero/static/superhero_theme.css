@@ -1,0 +1,37 @@
+button {
+    border: none;
+    color: #495a6b;
+    background-color: azure;
+    padding: 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    color: black;
+    margin: 4px;
+    transition-duration: .4s;
+    cursor: pointer;
+    width: 50%;
+    align-self: baseline;
+}
+
+button:hover {
+    background-color: #94a6b8;
+    color: white;
+}
+
+h1 {
+    color: #101418;
+    background-color: #576979;
+    padding: 30px;
+}
+
+html {
+    background-color: #698199;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+img {
+    float: left;
+    padding-right: 28px;
+}

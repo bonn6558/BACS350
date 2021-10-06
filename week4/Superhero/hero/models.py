@@ -7,3 +7,4 @@ class Hero (models.Model):
 
     def __str__(self):
         return f'{self.name}, Description: {self.description}'
+
