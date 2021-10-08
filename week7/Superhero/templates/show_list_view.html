@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
+</head>
+
+<body>
+    <h1>Superhero News - Index</h1>
+    <table>
+
+        <tr>
+            <td>Heros-------------</td>
+            <td>------------------</a></td>
+        </tr>
+
+        {% for hero in object_list %}
+
+        <tr>
+            <td>{{ hero.name }}</td>
+            <td><a href="{{ hero.pk }}">Details</a></td>
+        </tr>
+
+        {% endfor %}
+
+        <tr>
+            <p>
+                <button onclick="window.location.href='/create/';">
+                    + Add New
+                </button>
+            </p>
+            <p>
+                <button onclick="window.location.href='/delete/';">
+                    - Delete
+                </button>
+            </p>
+        </tr>
+    </table>
+    <p>
+        <a href="/details/">Go To Details</a>
+    </p>
+    <p>
+        <a href="/">Go To Home Page</a>
+    </p>
+
+</body>
+
+</html>
