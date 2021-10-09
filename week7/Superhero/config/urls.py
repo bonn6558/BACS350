@@ -25,5 +25,5 @@ urlpatterns = [
     path('details/', showDetailView.as_view()),
     path('create/', showCreateView.as_view()),
     path('details/<int:pk>', showUpdateView.as_view()),
-    path('delete/', showDeleteView.as_view()),
+    path('list/delete/<int:pk>', showDeleteView.as_view()),
 ]

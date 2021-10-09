@@ -9,32 +9,16 @@
 </head>
 
 <body>
-    <h1>Superhero News - ListView</h1>
-    <table>
-
-        <tr>
-            <td></td>
-            <td>Name</td>
-
-        </tr>
-
-        {% for hero in object_list %}
-
-        <tr>
-            <td>
-                <input type="checkbox" />
-            </td>
-            <td>{{ hero.name }}</td>
-
-        </tr>
-
-        {% endfor %}
-        </ul>
-
-        <button onclick="window.location.href='/list/';">
-            Delete
-        </button>
-
+    <h1>Superhero News - Delete</h1>
+    <div>
+        <form action="" method="post">{% csrf_token %}
+            <p>Are you sure you want to delete hero?</p>
+            <button type="submit" value="Confirm">Yes</button>
+        </form>
+    </div>
 </body>
 
 </html>
+
+
+<!--<a href="{{ hero.pk }}/delete">Delete Hero</a>-->

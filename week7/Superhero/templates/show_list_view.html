@@ -10,11 +10,22 @@
 
 <body>
     <h1>Superhero News - Index</h1>
+    <p>
+        <a href="/">Home</a>
+    </p>
+    <p>
+        <a href="/list/">Index</a>
+    </p>
+    <p>
+        <a href="/details/">Details</a>
+    </p>
+
     <table>
 
         <tr>
-            <td>Heros-------------</td>
-            <td>------------------</a></td>
+            <td>-------------------------</td>
+            <td>-------------------------</td>
+            <td>-------------------------</td>
         </tr>
 
         {% for hero in object_list %}
@@ -22,29 +33,21 @@
         <tr>
             <td>{{ hero.name }}</td>
             <td><a href="{{ hero.pk }}">Details</a></td>
+            <td><a href="/list/delete/{{ hero.pk }}">Delete Hero</a></td>
         </tr>
 
         {% endfor %}
-
-        <tr>
-            <p>
-                <button onclick="window.location.href='/create/';">
-                    + Add New
-                </button>
-            </p>
-            <p>
-                <button onclick="window.location.href='/delete/';">
-                    - Delete
-                </button>
-            </p>
-        </tr>
+        <main>
+            <tr>
+                <p>
+                    <button onclick="window.location.href='/create/';">
+                        + Add New
+                    </button>
+                </p>
+            </tr>
+        </main>
     </table>
-    <p>
-        <a href="/details/">Go To Details</a>
-    </p>
-    <p>
-        <a href="/">Go To Home Page</a>
-    </p>
+
 
 </body>
 
