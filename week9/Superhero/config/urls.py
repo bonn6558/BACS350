@@ -1,4 +1,4 @@
-"""appname URL Configuration
+"""config URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.2/topics/http/urls/
@@ -13,9 +13,17 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
+from hero.views import showListView, showDetailView, showCreateView, showUpdateView, showDeleteView, showMainView, showListDetailView
 from django.urls import path
+from django.contrib import admin
 
 urlpatterns = [
+    path('', showMainView.as_view()),
     path('admin/', admin.site.urls),
+    path('list/', showListView.as_view(), name="hero_list"),
+    path('list/<int:pk>', showListDetailView.as_view()),
+    path('details/', showDetailView.as_view()),
+    path('create/', showCreateView.as_view()),
+    path('details/<int:pk>', showUpdateView.as_view()),
+    path('list/delete/<int:pk>', showDeleteView.as_view()),
 ]

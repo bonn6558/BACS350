@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Super Hero Detail</title>
+    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
+</head>
+
+<body>
+    <h1>Superhero News - Details</h1>
+
+    <table>
+        <p>
+            <a href="/">Home</a>
+        </p>
+        <p>
+            <a href="/list/">Index</a>
+        </p>
+        <p>
+            <a href="/details/">Details</a>
+        </p>
+
+        {% for hero in object_list %}
+        <tr>
+            <td>
+                <h2>{{ hero.name }}</h2>
+                <p>
+                    <img src="{{ hero.image }}" alt="{{ hero.name }}" width="500">
+                </p>
+
+                <p> - Identity: {{ hero.identity }}</p>
+                <p> - Description: {{ hero.description }}</p>
+                <p> - Strength: {{ hero.strength }}</p>
+                <p> - Weakness: {{ hero.weakness }}</p>
+            </td>
+
+        </tr>
+        <tr>
+            <td>
+                <button onclick="window.location.href='{{ hero.pk }}';">
+                    Edit Hero
+                </button>
+            </td>
+
+        </tr>
+
+        {% endfor %}
+
+    </table>
+
+
+
+</body>
+
+</html>
