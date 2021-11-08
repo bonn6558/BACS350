@@ -3,8 +3,10 @@
 <hr>
 
 <div id="body-main">
+    {% if user.is_authenticated %}
+    <p>Hi {{ user.username }}.</p>
+    {% endif %}
     <img src="/static/images/flex.jpg" alt="FLEX">
 </div>
-
 
 {% endblock content %}

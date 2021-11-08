@@ -4,7 +4,8 @@
 <hr>
 
 <div id="body-main"> {% if user.is_authenticated %}
-    <form method="post">{% csrf_token %}
+    <form method="post">
+        {% csrf_token %}
         <p>Are you sure you want to delete hero?</p>
         <button type="submit" value="Confirm">Yes</button>
     </form>
