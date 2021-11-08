@@ -1,18 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'superhero_theme.html'%} {% block content %}
+<h1>{{ hero.name }}</h1>
+<hr>
+<div id="body-main">
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Hero Detail</title>
-    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
-</head>
-
-<body>
-    <h1>Superhero News</h1>
-
-    <h2>{{ hero.name }}</h2>
 
     <p>
         <img src="{{ hero.image }}" alt="{{ hero.name }}" width="500">
@@ -24,9 +14,9 @@
     <p> - Weakness: {{ hero.weakness }}</p>
 
     <p>
-        <a href="/list/">Back to Index</a>
+        <a class="link" href="/list/">Back to Index</a>
     </p>
 
-</body>
+</div>
 
-</html>
+{% endblock content %}

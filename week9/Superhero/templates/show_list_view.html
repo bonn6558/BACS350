@@ -1,54 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'superhero_theme.html'%} {% block content %}
+<h1>Index</h1>
+<hr>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
-</head>
+<table id="body-main">
 
-<body>
-    <h1>Superhero News - Index</h1>
-    <p>
-        <a href="/">Home</a>
-    </p>
-    <p>
-        <a href="/list/">Index</a>
-    </p>
-    <p>
-        <a href="/details/">Details</a>
-    </p>
+    <tr>
+        <td>-------------------------</td>
+        <td>-------------------------</td>
+        <td>-------------------------</td>
+    </tr>
 
-    <table>
+    {% for hero in object_list %}
 
-        <tr>
-            <td>-------------------------</td>
-            <td>-------------------------</td>
-            <td>-------------------------</td>
-        </tr>
+    <tr>
+        <td>{{ hero.name }}</td>
+        <td><a class="link" href="{{ hero.pk }}">Hero Info</a></td>
+        <td><a class="link" href="/list/delete/{{ hero.pk }}">Delete Hero</a></td>
+    </tr>
 
-        {% for hero in object_list %}
-
-        <tr>
-            <td>{{ hero.name }}</td>
-            <td><a href="{{ hero.pk }}">Details</a></td>
-            <td><a href="/list/delete/{{ hero.pk }}">Delete Hero</a></td>
-        </tr>
-
-        {% endfor %}
-        <main>
-            <tr>
-                <p>
-                    <button onclick="window.location.href='/create/';">
-                        + Add New
-                    </button>
-                </p>
-            </tr>
-        </main>
-    </table>
-
-
-</body>
-
-</html>
+    {% endfor %}
+    <tr>
+        <p>
+            <button onclick="window.location.href='/create/';">
+                + Add New
+            </button>
+        </p>
+    </tr>
+</table>
+{% endblock content %}

@@ -1,24 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'superhero_theme.html'%} {% block content %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
-</head>
+<h1>Delete</h1>
+<hr>
 
-<body>
-    <h1>Superhero News - Delete</h1>
-    <div>
-        <form action="" method="post">{% csrf_token %}
-            <p>Are you sure you want to delete hero?</p>
-            <button type="submit" value="Confirm">Yes</button>
-        </form>
-    </div>
-</body>
-
-</html>
+<div id="body-main"> {% if user.is_authenticated %}
+    <form method="post">{% csrf_token %}
+        <p>Are you sure you want to delete hero?</p>
+        <button type="submit" value="Confirm">Yes</button>
+    </form>
 
 
-<!--<a href="{{ hero.pk }}/delete">Delete Hero</a>-->
+    {% else %}
+    <p>You are not logged in</p>
+    <a class="link" href="/">Go Home</a>
+    {% endif %}
+</div>
+{% endblock content %}

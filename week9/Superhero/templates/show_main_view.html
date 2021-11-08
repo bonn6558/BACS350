@@ -1,38 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'superhero_theme.html'%} {% block content %}
+<h1>Home</h1>
+<hr>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Superhero Gallery</title>
-    <link rel="stylesheet" type="text/css" href="/static/superhero_theme.css">
-</head>
+<div id="body-main">
+    <img src="/static/images/flex.jpg" alt="FLEX">
+</div>
 
-<body>
-    <header>
-        <div class="row">
-            <div class="col-6">
-                <h1>Superhero News - Home</h1>
-                <p>
-                    <a href="/">Home</a>
-                </p>
-                <p>
-                    <a href="/list/">Index</a>
-                </p>
-                <p>
-                    <a href="/details/">Details</a>
-                </p>
-            </div>
-            <div class="col-3">
-                <img src="/static/images/flex.jpg" alt="FLEX">
-            </div>
-        </div>
-    </header>
 
-    <main>
-    </main>
-
-</body>
-
-</html>
+{% endblock content %}
