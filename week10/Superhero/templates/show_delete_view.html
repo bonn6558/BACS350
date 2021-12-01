@@ -1,0 +1,19 @@
+{% extends 'superhero_theme.html'%} {% block content %}
+
+<h1>Delete</h1>
+<hr>
+
+<div id="body-main"> {% if user.is_authenticated %}
+    <form method="post">
+        {% csrf_token %}
+        <p>Are you sure you want to delete hero?</p>
+        <button type="submit" value="Confirm">Yes</button>
+    </form>
+
+
+    {% else %}
+    <p>You are not logged in</p>
+    <a class="link" href="/">Go Home</a>
+    {% endif %}
+</div>
+{% endblock content %}

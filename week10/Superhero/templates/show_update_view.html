@@ -1,0 +1,13 @@
+{% extends 'superhero_theme.html'%} {% block content %}
+<!-- Same as show_update_view.html, just no prefilled form-->
+<h1>Edit Hero</h1>
+<hr>
+
+<div id="body-main">
+    <form action="" method="post">{% csrf_token %} {{ form.as_p }}
+        <button type="submit">
+            Update
+        </button>
+    </form>
+</div>
+{% endblock content %}

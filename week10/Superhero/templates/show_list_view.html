@@ -1,0 +1,30 @@
+{% extends 'superhero_theme.html'%} {% block content %}
+<h1>Index</h1>
+<hr>
+
+<table id="body-main">
+
+    <tr>
+        <td>-------------------------</td>
+        <td>-------------------------</td>
+        <td>-------------------------</td>
+    </tr>
+
+    {% for hero in object_list %}
+
+    <tr>
+        <td>{{ hero.name }}</td>
+        <td><a class="link" href="{{ hero.pk }}">Hero Info</a></td>
+        <td><a class="link" href="/list/delete/{{ hero.pk }}">Delete Hero</a></td>
+    </tr>
+
+    {% endfor %}
+    <tr>
+        <p>
+            <button onclick="window.location.href='/create/';">
+                + Add New
+            </button>
+        </p>
+    </tr>
+</table>
+{% endblock content %}

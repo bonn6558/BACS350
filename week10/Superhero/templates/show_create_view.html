@@ -1,0 +1,21 @@
+{% extends 'superhero_theme.html'%} {% block content %}
+
+<h1>Create</h1>
+<hr>
+
+<div id="body-main"> {% if user.is_authenticated %}
+    <form method="post" style="position: relative;">
+        {% csrf_token %} {{form.as_p}}
+        <br>
+        <button type="submit" value="Create Hero">Create Hero</button>
+    </form>
+
+    {% else %}
+
+    <p>You are not logged in</p>
+    <a class="link" href="/">Go Home</a>
+
+    {% endif %}
+</div>
+
+{% endblock content %}
